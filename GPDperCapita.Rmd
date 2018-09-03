@@ -1,5 +1,5 @@
 title: "DS 202 - Working in teams: Sample solution for the test case"
-author: "Yumou Qiu"
+author: "Collin Loy"
 ratio: 16x10
 output:
   rmdshower::shower_presentation:
@@ -122,7 +122,7 @@ Add lines for Mexico and the US
 canada_fixed %>% 
   ggplot(aes(x = year, y = lifeExp, group=country)) + geom_line() +
   geom_line(data = life5060 %>% 
-              filter(country %in% c("United States", "Mexico")))
+              filter(country %in% c("United States", "Mexico", "Spain")))
 ```
 
 
@@ -134,6 +134,7 @@ plot(x = canada_fixed$year, y = canada_fixed$lifeExp,
 
 US = life5060[life5060$country == "United States", ]
 Mexico = life5060[life5060$country == "Mexico", ]
+Spain = life5060[life5060$country == "Spain", ]
 
 lines(x = US$year, y = US$lifeExp)
 lines(x = Mexico$year, y = Mexico$lifeExp)
@@ -147,7 +148,7 @@ Add lines for Mexico and the US, color lines by country and add a legend
 canada_fixed %>% 
   ggplot(aes(x = year, y = lifeExp, colour=country)) + geom_line() +
   geom_line(data = life5060 %>% 
-              filter(country %in% c("United States", "Mexico", "Australia")))
+              filter(country %in% c("United States", "Mexico", "Australia", "Spain")))
 
 ```
 
